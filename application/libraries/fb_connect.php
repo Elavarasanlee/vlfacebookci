@@ -6,10 +6,10 @@
 	class Fb_connect extends Facebook {
 
 		//declare public variables
-		private $user 		= NULL;
-		private $user_id 	= FALSE;
-                private $friends        = NULL;
-                private $access_token   = FALSE;
+		protected $user 	= NULL;
+		protected $user_id 	= FALSE;
+                protected $friends      = NULL;
+                protected $access_token = FALSE;
 
                 //constructor method.
 		public function __construct()
