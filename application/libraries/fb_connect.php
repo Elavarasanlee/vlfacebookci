@@ -1,4 +1,6 @@
 <?php
+        if (!defined('BASEPATH')) exit('No direct script access allowed');
+        
 	include(APPPATH.'libraries/facebook/facebook.php');
 
 	class Fb_connect extends Facebook {
