@@ -89,6 +89,10 @@
                     else
                         return NULL;
                 }
+                
+                public function clearAllPersistentData() {
+                    parent::clearAllPersistentData();
+                }
 
 	} // end class
 ?>
