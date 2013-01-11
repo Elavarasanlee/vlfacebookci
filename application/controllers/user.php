@@ -42,7 +42,7 @@ class User extends CI_Controller {
             $this->session->unset_userdata('loggedIn');
             $this->session->sess_destroy();
             $this->fb_connect->clearAllPersistentData();
-            redirect(base_url('index.php/user'));
+            redirect(base_url('user'));
         }
 
 }
