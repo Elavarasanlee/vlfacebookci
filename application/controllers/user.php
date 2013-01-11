@@ -27,7 +27,7 @@ class User extends CI_Controller {
                 $this->session->set_userdata('loggedIn',TRUE);
                 $data['loggedIn'] = $this->session->userdata('loggedIn');
                 $data['title'] = 'Welcome';
-                $param['next'] = base_url('index.php/user/logout');
+                $param['next'] = base_url('user/logout');
                 $data['logoutUrl'] = $this->fb_connect->logoutUrl($param);
                 $data['userAccessToken'] = $this->fb_connect->userAccessToken();
                 $data['user'] = $this->fb_connect->user();
