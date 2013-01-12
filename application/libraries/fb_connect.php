@@ -5,7 +5,7 @@
 
 	class Fb_connect extends Facebook {
 
-		//declare public variables
+		//declare protected variables
 		protected $user 	= NULL;
 		protected $user_id 	= FALSE;
                 protected $friends      = NULL;
@@ -18,7 +18,7 @@
                     $CI->config->load("facebook",TRUE);
                     $config = $CI->config->item('facebook');
                     parent::__construct($config);
-                    $this->user_id = $this->getUser(); // New code
+                    $this->user_id = $this->getUser();
                     log_message('Info','Constructor initialized!');
                     $me = "";
                     $friends = "";
@@ -39,7 +39,7 @@
                         }
                     }
 		}
-                
+                //Use this function to fetch the fb_uid. Function call: $this->fb_connect->user_id();
                 public function user_id()
                 {
                     if(!empty($this->user_id))
@@ -47,7 +47,7 @@
                     else
                         return FALSE;
                 }
-                
+                //Use this function to fetch the user access token. Function call: $this->fb_connect->userAccessToken();
                 public function userAccessToken()
                 {
                     if(!empty($this->access_token))
@@ -55,7 +55,7 @@
                     else
                         return FALSE;
                 }
-
+                //Use this function to fetch the user details from fb. Function call: $this->fb_connect->user();
                 public function user()
                 {
                     if(!empty($this->user))
@@ -63,7 +63,7 @@
                     else
                         return NULL;
                 }
-                
+                //Use this function to fetch the user's complete friends list. Function call: $this->fb_connect->friends();
                 public function friends()
                 {
                     if(!empty($this->friends))
@@ -71,7 +71,7 @@
                     else
                         return NULL;
                 }
-                
+                //Use this function to fetch the graph-loginurl. Function call: $this->fb_connect->loginUrl();
                 public function loginUrl($params=array())
                 {
                     $loginUrl = $this->getLoginUrl($params);
@@ -80,7 +80,7 @@
                     else
                         return NULL;
                 }
-                
+                //Use this function to fetch the graph-logouturl. Function call: $this->fb_connect->logoutUrl();
                 public function logoutUrl($params=array())
                 {
                     $logoutUrl = $this->getLogoutUrl($params);
@@ -89,9 +89,10 @@
                     else
                         return NULL;
                 }
-                
+                //Use this function to clear all persistent cookies. Function call: $this->fb_connect->clearAllPersistentData();
                 public function clearAllPersistentData() {
                     parent::clearAllPersistentData();
+                    log_message('Info',"Successfully cleared all the persistent cookies");
                 }
 
 	} // end class

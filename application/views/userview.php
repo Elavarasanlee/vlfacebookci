@@ -5,13 +5,15 @@
         <title><?php echo $title; ?></title>
         <style type="text/css">
             body{text-align: left; margin: 5px 180px;}
-            .login{background: url("<?php echo $base_url; ?>/images/flogin.png") no-repeat scroll center transparent; min-width: 83px; min-height:20px; margin: 90px;}
-            .logout{background: url('<?php echo $base_url; ?>/images/flogout.png') no-repeat scroll left transparent; min-width: 72px; min-height:21px; margin-top:5px;}
+            .login{background: url("<?php echo $base_url; ?>/images/flogin.png") no-repeat scroll center transparent; max-width: 83px; min-height:20px; margin: 90px;}
+            .logout{background: url('<?php echo $base_url; ?>/images/flogout.png') no-repeat scroll left transparent; max-width: 72px; min-height:21px; margin-top:5px;}
             .cb{clear: both;}
             .key{min-width: 100px; float: left;}
-            .value{color: #cc0000; float: left; max-width: 800px}
+            .value{color: #cc0000; float: left; max-width: 800px;}
             .ar{color:darkred; cursor: pointer;}
-            .friendsBlock{height: auto; overflow: hidden; width: 1000px;}
+            .friendsBlock{height: auto; overflow: hidden; width: auto; margin-bottom:10px;}
+            .friendscount{color:darkolivegreen; font-style:oblique; font-weight:bolder;}
+            .friendslink{font-style:italic; font-size:x-large; color:crimson;}
             .friendsImage,.friendsName{width: 100px;}
             .row{float:left; height:100px; font-size: 12px; font-family: arial;}
             .fblink{text-decoration: none; color: #333;}
@@ -43,20 +45,21 @@
                     <div class="cb">
                         <strong>Friends: </strong><br/>
                         <div class="friendsBlock">
-                        <?php foreach($friends as $sno=>$details): #if($sno>='39'){ break; }?>
-                            <div class="row">
+                            You have a total of <span class="friendscount">"<?php echo count($friends); ?>"</span> Friends. <a target="_blank" href="<?php echo $base_url.'user/friendsList'; ?>" class="friendslink">click here</a> to view the complete list!
+                        <?php // foreach($friends as $sno=>$details): #if($sno>='39'){ break; }?>
+<!--                            <div class="row">
                                   <div class="friendsImage">
-                                      <a href="http://facebook.com/<?php echo $details['id'] ?>" target="_blank" class="fblink">
-                                        <img src="http://graph.facebook.com/<?php echo $details['id'] ?>/picture?type=square" />
+                                      <a href="http://facebook.com/<?php // echo $details['id'] ?>" target="_blank" class="fblink">
+                                        <img src="http://graph.facebook.com/<?php // echo $details['id'] ?>/picture?type=square" />
                                       </a>
                                   </div>
                                   <div class="friendsName">
-                                      <a href="http://facebook.com/<?php echo $details['id'] ?>" target="_blank" class="fblink">
-                                        <?php echo $details['name']; ?>
+                                      <a href="http://facebook.com/<?php // echo $details['id'] ?>" target="_blank" class="fblink">
+                                        <?php // echo $details['name']; ?>
                                       </a>
                                   </div>
-                             </div>
-                        <?php endforeach; ?>
+                             </div>-->
+                        <?php // endforeach; ?>
                         </div>
                     </div>
                 </div>
